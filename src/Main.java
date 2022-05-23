@@ -5,13 +5,14 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        convertDate();
+        Date curentDate = new Date (9999992299292L);
+        System.out.println(convertDate(curentDate));
     }
 
-    public static void convertDate(){
-        Date date = new Date();
+    public static ZonedDateTime convertDate(Date neededDate){
+        Date date = neededDate;
         Instant instant = date.toInstant();
         ZonedDateTime zonedDateTime = instant.atZone(ZoneId.of("Asia/Almaty"));
-        System.out.println(zonedDateTime);
+        return zonedDateTime;
     }
 }
